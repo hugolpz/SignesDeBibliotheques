@@ -5,15 +5,62 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Project 2</title>
   <link rel="stylesheet" href="./css/fonts.css">
+  <style>
+.card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+}
+
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  </style>
 </head>
 <body>
   <div id="app">
     <ul>
-      <li v-for="language in data" :key="language.iso">
-        <span>[{{language.iso}}] {{ language.languageLabel }}</span> : <span>{{ language.populationQualifier || "n.a." }}</span>
+      <li v-for="item in data" :key="item.word">
+        <div class="card">
+          <div class="card-header"> {{ item.word }} </div>
+          <div class="card-body">
+            <div class="video-container">
+                <video controls>
+                  <source src="{{ item.url }}" type="video/mpeg">
+                  Your browser does not support the video tag.
+                </video>
+            </div>
+          </div>
+        </div>
       </li>
     </ul>
   </div>
+
+  
 
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
   <script>
@@ -45,18 +92,210 @@ var data = [
     "wikidata": "Q8798",
   },
 ];
+    var lsf = [
+    "File:LL-Q33302 (fsl)-Taliba31-accueil.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-accueil (lieu).webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-accueillir.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-accueillir.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-achat.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-achat.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-acheter.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-acheter.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-acte (théâtre).webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-adresse email.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-adresse mail.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-animation.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-animer.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-ascenseur.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-ascenseur.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-atelier.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-au revoir.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-au revoir.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-bande dessinée.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-BD.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-bd.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-bibliobus.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-bibliobus.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-bibliothèque.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-bibliothèque.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-bonjour.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-bonjour.webm",
+    "File:LL-Q33302 (fsl)-Yug-bonjour.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-carte de bibliothèque.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-carte de bibliothèque.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-catalogue.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-catalogue (liste).webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-CD.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-cd.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-CDI.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-cerf.webm",
+    "File:LL-Q33302 (fsl)-Caroline (Guilhelma)-chinois.webm",
+    "File:LL-Q33302 (fsl)-Roy Batty 82-chinois.webm",
+    "File:LL-Q33302 (fsl)-Yug-chinois.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-commande.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-commander.webm",
+    "File:LL-Q33302 (fsl)-Yug-ComputYourself, couloir-cam XA60-light no spots + no sun.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-comédien.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-conseil.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-conseil.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-conseiller.webm",
+    "File:LL-Q33302 (fsl)-Yug-MRV, AR033-cam 720px-light 2x spots + no sun.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-conseiller (n.).webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-conseiller (v.).webm",
+    "File:LL-Q33302 (fsl)-Taliba31-consultation sur place.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-consultation sur place (livre).webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-conte.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-conte.webm",
+    "File:LL-Q33302 (fsl)-Caroline (Guilhelma)-coquillage.webm",
+    "File:LL-Q33302 (fsl)-Roy Batty 82-coquillage.webm",
+    "File:LL-Q33302 (fsl)-Roy Batty 82-Coquillage.webm",
+    "File:LL-Q33302 (fsl)-Yug-coquillage.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-coucou (accrocher le regard).webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-coup de coeur.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-coup de coeur.webm",
+    "File:LL-Q33302 (fsl)-Antoine l. (0x010C)-couscous.webm",
+    "File:LL-Q33302 (fsl)-Caroline (Guilhelma)-crabe.webm",
+    "File:LL-Q33302 (fsl)-Roy Batty 82-crabe.webm",
+    "File:LL-Q33302 (fsl)-Yug-MRV, couloir-cam 720px-light no spots + sunny.webm",
+    "File:LL-Q33302 (fsl)-Caroline (Guilhelma)-crabes.webm",
+    "File:LL-Q33302 (fsl)-Roy Batty 82-crabes.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-culture.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-de rien.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-de rien.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-demander conseil.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-demander conseil.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-dessin anime.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-dessin animé.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-DVD.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-dvd.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-email.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-emprunter.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-emprunter.webm",
+    "File:LL-Q33302 (fsl)-Roy Batty 82-encore.webm",
+    "File:LL-Q33302 (fsl)-Yug-encore.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-espace.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-espace jeunesse.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-espace jeunesse.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-espace (lieu).webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-film.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-film.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-Histoire.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-histoire.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-histoire.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-Histoire (2).webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-Histoire (3).webm",
+    "File:LL-Q33302 (fsl)-Taliba31-histoire (discipline).webm",
+    "File:LL-Q33302 (fsl)-Taliba31-histoire (recit).webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-inscription.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-inscription.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-internet.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-internet.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-je ne comprends pas.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-je ne comprends pas.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-je ne comprends pas (2).webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-jeux.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-jeux.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-jouet.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-jouets.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-journal.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-journal.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-journal (2).webm",
+    "File:LL-Q33302 (fsl)-Caroline (Guilhelma)-lapin.webm",
+    "File:LL-Q33302 (fsl)-Yug-lapin.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-lire.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-lire.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-littérature.webm",
+    "File:LL-Q33302 (fsl)-Antoine l. (0x010C)-livre.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-livre.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-livre.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-livre CD.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-livre cd.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-livre policier.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-livre policier.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-livre pour enfant.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-livre pour enfants.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-manga.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-mange.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-manger.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-merci.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-merci.webm",
+    "File:LL-Q33302 (fsl)-Yug-merci.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-Molière.webm",
+    "File:LL-Q33302 (fsl)-Yug-MRV, R137-cam 720px-light 2x spots + no sun.webm",
+    "File:LL-Q33302 (fsl)-Yug-MRV, R137-cam 720px-light 2x spots + sunny.webm",
+    "File:LL-Q33302 (fsl)-Yug-MRV, R137-cam 720px-light no spots + sunny.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-multimedia.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-multimedia.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-musique.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-musique.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-oui.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-oui.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-où.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-où.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-pardon.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-pardon.webm",
+    "File:LL-Q33302 (fsl)-Caroline (Guilhelma)-peur.webm",
+    "File:LL-Q33302 (fsl)-Yug-peur.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-poesie.webm",
+    "File:LL-Q33302 (fsl)-Yug-poisson.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-pourquoi.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-pourquoi.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-poésie.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-prolongation d'emprunt.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-prolongation d'emprunt.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-prêt.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-prêt.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-public.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-quand.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-quand.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-qui.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-qui.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-rayon (lieu).webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-rembourser.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-rembourser.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-reportage.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-reportage.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-reservation.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-reserver.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-retour des documents.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-retour des documents.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-réservation.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-réserver.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-rôle.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-s'il vous plait.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-s'il vous plait.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-salle d'étude.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-salle d'étude.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-salle du conte.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-salle du conte.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-salut.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-salut (arrivée).webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-salut (départ).webm",
+    "File:LL-Q33302 (fsl)-Taliba31-sanglier.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-science-fiction.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-science-fiction.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-section.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-section.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-sortie.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-théatre.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-théâtre.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-théâtre.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-toilettes.webm",
+    "File:LL-Q33302 (fsl)-Hugo en résidence-WC.webm",
+    "File:LL-Q33302 (fsl)-Taliba31-wc.webm"
+]
 /* ************************************************** */
 /* VUEJS ******************************************** */
     new Vue({
       el: '#app',
       data: {
-        data: data
+        data: lsf.map(item => { filename: item, url: 'http://commons.wikimedia.org/wiki/Special:FilePath/'+item.replace(' ','_'), author: item.replace('File:LL-Q33302 (fsl)-','').split('-')[0], word: item.replace('.webm','').split('-').pop() } );
       },
       mounted() {
         fetch('https://hugolpz.github.io/LanguagesGallery/data/demo.json') // Repository set as public Github page, with well formated JSON data.
           .then(response => response.json())
           .then(data => {
-            this.data = data;
+            // this.data = received data ;
           })
           .catch(error => {
             console.error('Error fetching data:', error);
