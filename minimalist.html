@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="./css/fonts.css">
   <style>
 .card {
+  width: 300px;
+  display: inline-block;
   border: 1px solid #ccc;
   border-radius: 8px;
   margin: 20px;
@@ -15,27 +17,27 @@
 
 .card-header {
   padding: 10px 20px;
-  background-color: #007bff;
+  background-color: #00A99D;
   color: #fff;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
 }
-
+.card-header::first-letter {
+  /* Uppercase the first letter of the first word */
+  text-transform: uppercase;
+}
 .card-body {
   padding: 20px;
 }
 
 .video-container {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
+  height: auto;
 }
 
 .video-container video {
-    position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 250px;
     height: auto;
     display: block;
   }
@@ -43,21 +45,18 @@
 </head>
 <body>
   <div id="app">
-    <ul>
-      <li v-for="item in data" :key="item.word">
-        <div class="card">
-          <div class="card-header"> {{ item.word }} </div>
-          <div class="card-body">
-            <div class="video-container">
-                <video controls>
-                  <source src="{{ item.url }}" type="video/mpeg">
-                  Your browser does not support the video tag.
-                </video>
-            </div>
-          </div>
+    <div v-for="item in data" :key="item.author+'__'+item.word" class="card">
+      <div class="card-header"> {{ item.word }} </div>
+      <div class="card-body">
+        <div class="video-container">
+            <video controls="" muted="" preload="auto" :src="item.url" width="250" class="">
+              Your browser does not support the video tag.
+            </video>
+				par <a :href="'https://commons.wikimedia.org/wiki/'+ encodeURIComponent(item.filename)">{{ item.author }}</a><!-- – Vidéo ${ i + 1 } sur ${ files.length } -->
+			</div>
         </div>
-      </li>
-    </ul>
+      </div>
+    </div>
   </div>
 
   
@@ -96,6 +95,7 @@ var data = [
     "File:LL-Q33302 (fsl)-Taliba31-accueil.webm",
     "File:LL-Q33302 (fsl)-Hugo en résidence-accueil (lieu).webm",
     "File:LL-Q33302 (fsl)-Hugo en résidence-accueillir.webm",
+    /*
     "File:LL-Q33302 (fsl)-Taliba31-accueillir.webm",
     "File:LL-Q33302 (fsl)-Hugo en résidence-achat.webm",
     "File:LL-Q33302 (fsl)-Taliba31-achat.webm",
@@ -282,14 +282,19 @@ var data = [
     "File:LL-Q33302 (fsl)-Taliba31-théâtre.webm",
     "File:LL-Q33302 (fsl)-Hugo en résidence-toilettes.webm",
     "File:LL-Q33302 (fsl)-Hugo en résidence-WC.webm",
-    "File:LL-Q33302 (fsl)-Taliba31-wc.webm"
+    "File:LL-Q33302 (fsl)-Taliba31-wc.webm" */
 ]
 /* ************************************************** */
 /* VUEJS ******************************************** */
     new Vue({
       el: '#app',
       data: {
-        data: lsf.map(item => { filename: item, url: 'http://commons.wikimedia.org/wiki/Special:FilePath/'+item.replace(' ','_'), author: item.replace('File:LL-Q33302 (fsl)-','').split('-')[0], word: item.replace('.webm','').split('-').pop() } );
+        data: lsf.map(item => ({ 
+          filename: item, 
+          url: 'https://commons.wikimedia.org/wiki/Special:FilePath/'+item.replace(/ /g,'_'), 
+          author: item.replace('File:LL-Q33302 (fsl)-','').split('-')[0], 
+          word: item.replace('.webm','').split('-').pop() })
+        )
       },
       mounted() {
         fetch('https://hugolpz.github.io/LanguagesGallery/data/demo.json') // Repository set as public Github page, with well formated JSON data.
