@@ -1,46 +1,52 @@
 # SignesDeBibliothèque
-**SignesDeBibliothèque** is searchable gallery of sign languages videos produced via crowd sourcing video recording tool LinguaLibre.org.
+**SignesDeBibliothèque** ou **Lexique LSF pour des bibliothèques inclusives** est un lexique de vidéos en langues des signes, disponible en ligne, produite via l'outil d'enregistrement vidéo participatif LinguaLibre.org.
 
-## Why SignDeBibliothèque ?
-Public libraries and librarians are looking to serve all citizens, incluging the significant part of the population is hearing issues. Librarians also manifested interest to lear basic sign language if provided with relevant learning resources. Available technologies such as LinguaLibre video recording studios and popular web technologies makes the creation of low cost e-learning system possible, in order to satisfy this need.
-
+## Pourquoi SignesDeBibliothèque ?
+Les bibliothèques publiques et les bibliothécaires cherchent à servir tous les usagers, incluant donc les usagers signants. Les bibliothécaires ont également manifesté leur intérêt pour langue des signes si des ressources d'apprentissage pertinentes leur sont fournies. Les technologies disponibles telles que le [studio d'enregistrement vidéo LinguaLibre](https://lingualibre.org/wiki/Special:RecordWizard) et les technologies web populaires rendent possible la création de systèmes d'apprentissage en ligne à faible coût pour satisfaire ce besoin.
 
 ## Solution
-The idea of SignDeBibliothèque was inspired by LinguaLibre technology and existing project: 
-* 64 [Signes de bibliothèque](https://bibliotheques-inclusives.fr/2019/08/signes-de-bibliotheque-repertoire-en-lsf-des-mots-et-expressions-utilises-en-bibliotheque), students from the Marcel Sembat high school, Sotteville-en-Rouen, France.In 2024, Amélie Barrio, co-responsable URFIST Occitanie and working with libraries of Occitanie region, pointed out the need for an human friendly, online, searchable base of practical signs for Librarians. URFIST Occitanie therefore :
-- funded LinguaLibre SignIt recording studio repare
-- created [a 92 signs list](https://lingualibre.org/wiki/List:Fsl/Signes_de_bibliothèque) for librarians
-- coordinated with Toulousean signing associations to video record a larger and video lexicon
-- created the single page apps to visualize and search those.
+L'idée de SignesDeBibliothèque a été inspirée par la technologie LinguaLibre et d'un projet existant : 
+* 64 [Signes de bibliothèque](https://bibliotheques-inclusives.fr/2019/08/signes-de-bibliotheque-repertoire-en-lsf-des-mots-et-expressions-utilises-en-bibliotheque), étudiants du lycée Marcel Sembat, Sotteville-en-Rouen, France.
 
+En 2024, Amélie Barrio (co-responsable URFIST Occitanie) souligne la nécessité d'une liste en ligne, consultable et conviviale de signes pratiques pour les bibliothécaires.  Hugo Lopez, Wikimédien en résidence à l'URFIST et mainteneur de LinguaLibre/SignIt prend ce projet. L'URFIST Occitanie a donc :
+- financé la réparation du studio d'enregistrement LinguaLibre SignIt
+- identifié [92 expressions et signes pratiques](https://lingualibre.org/wiki/List:Fsl/Signes_de_bibliothèque) pour les bibliothécaires
+- coordonné avec les associations toulousaines de langue des signes IRIS pour enregistrer cette liste lexicale plus large en vidéo
+- créé l'applications web monopage pour visualiser et rechercher ces signes.
 
 ## Design
-<img src="https://github.com/hugolpz/LanguagesGallery/assets/1420189/3a81cdbc-ccdd-4f98-8896-64a4d7d0cca3" alt="Image" width="300" align="right">
-This page presents Lingualibre.org's statistics on a per languages basis with:
+<img src="https://raw.githubusercontent.com/hugolpz/SignesDeBibliotheques/main/assets/SignesDeBibliotheques-card.png" alt="Image" width="200" align="right">
+Cette page présente la liste des mots et signes de SignesDeBibliothèque, avec :
 
-- Language name (Wikidata)
-- Unique words vs recordings ratio. (Lingualibre)
-- Contribute button: points to our online rapid recording studio.
-- Download button: download access to all open licence audios in this language.
+- Bouton Contribuer : pointe vers notre studio d'enregistrement en ligne rapide.
+- Mot en français
+- Vidéo signée : enregistrée avec Lingualibre, stockée sur Wikimedia Commons
+- Lien vers SpreadTheSign : un projet européen plus riche
+- Lien vers les définitions de Wiktionary
 
-![Screenshot from 2023-06-04 21-59-20](https://github.com/hugolpz/LanguagesGallery/assets/1420189/c26bc81e-299c-4126-acdc-95d06c3052f4)
+<img src="https://raw.githubusercontent.com/hugolpz/SignesDeBibliotheques/main/assets/SignesDeBibliotheques-gallery.png" alt="Image" align="center">
 <br clear=all>
 
-## Advanced features
-- Search and filter by French expression
-- Share a filtered url by appending `?search=YourExpression` to the url
+## Fonctionnalités avancées
+- Rechercher et filtrer par expression française
+- Partager une URL filtrée en ajoutant `?search=YourExpression` à l'URL
 
-## Datasets reuse
-Each language's card has a download button to get a zip of all our open licence files. Their filenames should be used to point to the rightful Wikimedia file page, containing the file's licence.
+## Réutilisation des ensembles de données
+Nos vidéos sont :
+- stockées sur Wikimedia Commons dans [Category:Lingua_Libre_pronunciation-fsl](https://commons.wikimedia.org/wiki/Category:Lingua_Libre_pronunciation-fsl)
+- comptées sur la [vignette LinguaLibre pour la LSF](https://hugolpz.github.io/LanguagesGallery/?search=French+sign+language#fsl)
+- téléchargeable sur [Lingualibre datasets, via un zip](https://lingualibre.org/datasets/Q99628-fsl-French%20Sign%20Language.zip)
 
-## Contribute
-This Single Page Web Application works with:
+## Contribuer
+Cette application web monopage fonctionne avec :
 - HTML
 - CSS
 - VueJS
 
-## Credits
-Sorted by involvement: URFIST Occitanie : Hugo Lopez, Améle Barrio ; IRIS : Brigitte Dalle, Caroline.
+## Crédits
+Classés par institutions : 
+* URFIST Occitanie : Hugo Lopez, Amélie Barrio
+* IRIS : Brigitte Dalle, Caroline.
 
-## License
-See [index.html](./index.html)'s footer and [LICENSE MPL](./LICENSE).
+## Licence
+Voir le pied de page de [index.html](./index.html) et [LICENSE MPL](./LICENSE).
